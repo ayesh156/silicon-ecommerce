@@ -1,5 +1,6 @@
 import {NavLink} from "react-router-dom";
 import {FaBars} from "react-icons/fa6"
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
 
@@ -17,7 +18,7 @@ const Navbar = () => {
         <header>
             <nav className='md:px-5 py-4 px-3 mx-auto flex justify-between items-center'>
                 {/*Logo Image*/}
-                <img src="/src/assets/logo.png" alt="Logo"/>
+                <img src={logo} alt="Logo"/>
 
                 <ul className='md:flex gap-12 text-lg hidden'>
                     {
