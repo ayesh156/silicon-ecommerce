@@ -1,30 +1,39 @@
 import {NavLink} from "react-router-dom";
-import {FaBars} from "react-icons/fa6"
+import {FaBars, FaXmark} from "react-icons/fa6"
 import logo from '../assets/logo.png';
+import {useState} from "react";
 
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    }
 
     //navItems
-
     const navItems = [
         {path: "/", link: "Home"},
         {path: "/news", link: "News"},
         {path: "/about-us", link: "About"},
         {path: "/contact-us", link: "Contact"},
     ];
-    ;
 
     return (
-        <header>
-            <nav className='md:px-5 py-4 px-3 mx-auto flex justify-between items-center'>
+        <header className="border-b-2 md:border-b-0">
+            <nav className='md:px-5 py-3 px-3 mx-auto flex justify-between items-center'>
                 {/*Logo Image*/}
                 <img src={logo} alt="Logo"/>
 
                 <ul className='md:flex gap-12 text-lg hidden'>
                     {
                         navItems.map(({path, link}) => (
-                            <li key={navItems.path}>
-                                <NavLink to={path}>{link}</NavLink>
+                            <li key={path} className="relative group">
+                                <NavLink to={path}>
+                                    {link}
+                                </NavLink>
+                                {/* Line on hover */}
+                                <span
+                                    className="absolute left-0 bottom-[-16px] w-full h-[3px] bg-[#133285] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
                             </li>
                         ))
                     }
@@ -42,12 +51,27 @@ const Navbar = () => {
 
                 {/*mobile menu btn, display mobile screen*/}
                 <div className="md:hidden">
-                    <button className='cursor-pointer'>
-                        <FaBars className='w-5 h-5' />
+                    <button onClick={toggleMenu} className='cursor-pointer'>
+                        <span
+                            className={`transition-transform duration-300 ease-in-out ${isMenuOpen ? 'rotate-180' : ''}`}>
+                            {isMenuOpen ? <FaXmark className='w-5 h-5'/> : <FaBars className='w-5 h-5'/>}
+                        </span>
                     </button>
                 </div>
-
             </nav>
+
+            {/*menu items only for mobile*/}
+            <div>
+                <ul className={`md:hidden gap-12 text-lg block space-y-3 bg-white ${isMenuOpen ? 'h-screen w-full transition-all ease-out duration-150' : 'hidden'}`}>
+                    {
+                        navItems.map(({path, link}) => (
+                            <li key={navItems.path} className="border-b-2 md:border-b-0 pb-3 px-4">
+                                <NavLink onClick={toggleMenu} to={path}>{link}</NavLink>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
         </header>
     )
 }

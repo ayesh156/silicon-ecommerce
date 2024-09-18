@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ----------- Home Image Slider ----------- */
+
+.swiper-custom{
+    position: relative;
+}
+
+.swiper-custom .swiper-button-prev{
+    left: 90px !important; /* Position 200px from the left */
+    padding: 8px 8px 8px 4px !important; /* Added padding for better spacing */
+}
+
+.swiper-custom .swiper-button-next{
+    right: 90px !important; /* Position 200px from the left */
+    padding: 8px 4px 8px 8px !important; /* Added padding for better spacing */
+}
+
+.swiper-custom .swiper-button-prev,
+.swiper-custom .swiper-button-next {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    height: 40px !important;
+    width: 40px !important; /* Increased width for the arrow */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+}
+
+.swiper-custom .swiper-button-prev:hover,
+.swiper-custom.swiper-button-next:hover {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.swiper-custom:hover .swiper-button-prev,
+.swiper-custom:hover .swiper-button-next {
+    opacity: 1; /* Show buttons on hover */
+    visibility: visible; /* Show buttons on hover */
+}
+
+
+.swiper-custom .swiper-pagination-bullet {
+    background-color: rgba(0, 0, 0, 0.2) !important; /* Color of the inactive bullets */
+    opacity: 1 !important; /* Ensure bullets are fully opaque */
+}
+
+.swiper-custom .swiper-pagination-bullet-active {
+    background-color: rgba(255, 255, 255, 1) !important; /* Color of the active bullet */
+}
+
+.swiper-slide {
+    transition: transform 0.5s ease !important; /* Smooth transition for scaling */
+}
+
+.swiper-slide-next,
+.swiper-slide-prev {
+    transform: scale(1.2) !important; /* Zoom out effect */
+}
+
+.swiper-slide-active {
+    transform: scale(1.0) !important; /* Zoom in effect */
+    transition: transform 1s ease-out !important; /* Immediate transition */
+}
+
+
+/* ----------- Home Image Slider End ----------- */
