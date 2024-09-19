@@ -8,7 +8,7 @@ import {aboutImg} from "../constants/index.jsx"; // Import image data
 import {EffectCoverflow, Navigation, Pagination} from 'swiper/modules'; // Import Navigation module
 import { HiOutlineChevronLeft,HiOutlineChevronRight } from "react-icons/hi2";
 
-const ImageSlider = () => {
+const ImageTopSlider = () => {
 
     return (
         <div className="relative text-white">
@@ -58,4 +58,4 @@ const ImageSlider = () => {
 
 }
 
-export default ImageSlider;
+export default ImageTopSlider;

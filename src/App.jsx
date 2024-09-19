@@ -5,8 +5,10 @@ const App = () => {
 
   return (
       <>
-          <Navbar/>
-          <Outlet/>
+          <Navbar />
+          <div className="mt-16"> {/* Adjust the margin based on your navbar height */}
+              <Outlet />
+          </div>
       </>
   )
 }
