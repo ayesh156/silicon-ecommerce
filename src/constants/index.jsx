@@ -19,7 +19,88 @@ import hbsimg2 from "../assets/home_bottom_slider_img/PAD18.png";
 import hbsimg3 from "../assets/home_bottom_slider_img/tiger10.jpg";
 import hbsimg4 from "../assets/home_bottom_slider_img/tiger12.png";
 
-export const aboutImg = [
+import { LiaFacebookF } from "react-icons/lia";
+import { FaYoutube } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
+import { TiSocialTwitter } from "react-icons/ti";
+
+//navItems
+export const navItems = [
+  {path: "/", link: "Home"},
+  {path: "/news", link: "News"},
+  {path: "/about-us", link: "About"},
+  {path: "/contact-us", link: "Contact"},
+];
+
+
+//footerItems
+export const footerItems = [
+  {
+    title: "ABOUT OSCAL",
+    items: [
+      { label: "About Us", link: "#" },
+      { label: "News", link: "#" },
+    ],
+  },
+  {
+    title: "PRODUCTS",
+    items: [
+      { label: "TIGER Series Smartphone", link: "#" },
+      { label: "FLAT Series Smartphone", link: "#" },
+      { label: "C Series Smartphone", link: "#" },
+      { label: "PILOT Series Smartphone", link: "#" },
+      { label: "MODERN Series Smartphone", link: "#" },
+      { label: "Pad Series", link: "#" },
+      { label: "Portable Power Station", link: "#" },
+      { label: "Hibuds", link: "#" },
+    ],
+  },
+  {
+    title: "SUPPORT",
+    items: [
+      { label: "Support Center", link: "#" },
+      { label: "Contact Us", link: "#" },
+      { label: "CE Certification", link: "#" },
+      { label: "Network Bands Check", link: "#" },
+      { label: "RF Exposure", link: "#" },
+    ],
+  },
+];
+
+//footerMediaLinks
+export const socialMediaLinks = [
+  {
+    name: "Facebook",
+    link: "https://facebook.com",
+    icon: <LiaFacebookF className="h-4 w-4" />,
+  },
+  {
+    name: "YouTube",
+    link: "https://youtube.com",
+    icon: <FaYoutube className="h-3 w-3" />,
+  },
+  {
+    name: "Instagram",
+    link: "https://instagram.com",
+    icon: <FaInstagram className="h-3 w-3" />,
+  },
+  {
+    name: "Twitter",
+    link: "https://x.com",
+    icon: <TiSocialTwitter className="h-3 w-3" />,
+  },
+];
+
+// footerLinks
+export const footerLinks = [
+  { href: "#", text: "Privacy Policy" },
+  { href: "#", text: "Terms of Use" },
+  { href: "#", text: "Legal Statement" },
+  { href: "#", text: "Intellectual Property Rights" }
+];
+
+// homeTopSliderImg
+export const homeTopImg = [
   {
     name: "img-1",
     image: hsimg1,
@@ -82,6 +163,7 @@ export const aboutImg = [
   },
 ];
 
+// homeProductsItems
 export const homeProducts = [
   {
     category: "Pad Series",
@@ -91,42 +173,42 @@ export const homeProducts = [
         title: "ELITE 1",
         description: "Show it! Play it!",
         link: "https://google.com",
-        isStacked: 1,
+        layout: 1,
       },
       {
         image: hpimg4,
         title: "PAD 18",
         description: "All the Best, All in One.",
         link: "https://google.com",
-        isStacked: 1,
+        layout: 1,
       },
     ],
   },
   {
     category: "Smartphone",
     items: [
-
+      {
+        image: hpimg1,
+        title: "TIGER 10",
+        description: "Day or Night, You Shine So Bright.",
+        link: "https://google.com",
+        layout: 1,
+      },
       {
         image: hpimg2,
         title: "TIGER 10",
         description: "Day or Night, You Shine So Bright.",
         link: "https://google.com",
-        isStacked: 2,
+        layout: 2,
       },
       {
         image: hpimg3,
         title: "MODERN 8",
         description: "Go Beyond Power, Make Every Photo Epic",
         link: "https://google.com",
-        isStacked: 2,
+        layout: 2,
       },
-      /*{
-          image: hpimg1,
-          title: "TIGER 10",
-          description: "Day or Night, You Shine So Bright.",
-          link: "https://google.com",
-          isStacked: 3,
-      },*/
+
     ],
   },
   {
@@ -137,7 +219,7 @@ export const homeProducts = [
         title: "PILOT 2",
         description: "Dual Screens, Dual LED Flashlights, Double the Magic",
         link: "https://google.com",
-        isStacked: 3,
+        layout: 3,
       }
     ],
   },
@@ -149,19 +231,20 @@ export const homeProducts = [
         title: "PowerMax 6000",
         description: "Power All Your High-Powered Home Devices With Ease",
         link: "https://google.com",
-        isStacked: 1,
+        layout: 1,
       },
       {
         image: hpimg8,
         title: "PowerMax 3600",
         description: "",
         link: "https://google.com",
-        isStacked: 1,
+        layout: 1,
       }
     ],
   },
 ];
 
+// homeBottomSliderImg
 export const homeBottomImgSlider = [
   {
     name: "img-1",

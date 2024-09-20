@@ -1,4 +1,3 @@
-import ImageSlider from "../components/ImageTopSlider.jsx";
 import HomeProducts from "../components/HomeProducts.jsx";
 import {homeProducts} from "../constants/index.jsx";
 import ImageTopSlider from "../components/ImageTopSlider.jsx";
@@ -10,15 +9,14 @@ const Home = () => {
         <>
             <div
                 className="w-full">
-                <ImageTopSlider/>
+                <ImageTopSlider/> {/* Render the top image slider */}
             </div>
             {homeProducts.map((product, index) => (
-                <HomeProducts key={index} category={product.category} items={product.items}
-                              isStacked={product.items.isStacked}/>
+                <HomeProducts key={index} category={product.category} items={product.items} /> /* Render HomeProducts for each product category */
             ))}
             <div
                 className="w-full mt-36 mb-2">
-                <ImageBottomSlider/>
+                <ImageBottomSlider/> {/* Render the bottom image slider */}
             </div>
         </>
     )

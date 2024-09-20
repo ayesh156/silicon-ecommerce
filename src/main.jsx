@@ -13,31 +13,32 @@ import Contact from "./pages/Contact.jsx";
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <App/>,
-        children:[
+        path: "/", // Base path for the application
+        element: <App />, // Main application component
+        children: [ // Child routes under the base path
             {
-                path: "/",
-                element: <Home />,
+                path: "/", // Home route
+                element: <Home />, // Component to render for the home route
             },
             {
-                path: "/news",
-                element: <News />,
+                path: "/news", // News route
+                element: <News />, // Component to render for the news route
             },
             {
-                path: "/about-us",
-                element: <About />,
+                path: "/about-us", // About Us route
+                element: <About />, // Component to render for the about us route
             },
             {
-                path: "/contact-us",
-                element: <Contact />,
+                path: "/contact-us", // Contact Us route
+                element: <Contact />, // Component to render for the contact us route
             }
         ]
     },
 ]);
 
+// Render the application using StrictMode for highlighting potential problems
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <RouterProvider router={router} />
+      <RouterProvider router={router} /> {/* Provide the router to the app */}
   </StrictMode>,
 )

@@ -2,28 +2,22 @@ import {NavLink} from "react-router-dom";
 import {FaBars, FaXmark} from "react-icons/fa6"
 import logo from '../assets/logo.png';
 import {useState} from "react";
+import {navItems} from "../constants/index.jsx"; // Import image data
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);// State to manage mobile menu visibility
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        setIsMenuOpen(!isMenuOpen); // Toggle mobile menu open/close
     }
-
-    //navItems
-    const navItems = [
-        {path: "/", link: "Home"},
-        {path: "/news", link: "News"},
-        {path: "/about-us", link: "About"},
-        {path: "/contact-us", link: "Contact"},
-    ];
 
     return (
         <header className="fixed top-0 left-0 right-0 border-b-2 md:border-b-0 bg-white z-50">
-            <nav className='md:px-5 py-3 px-3 mx-auto flex justify-between items-center'>
+            <nav className='md:px-5 py-3 px-3 mx-auto flex justify-between max-w-screen-2xl items-center'>
                 {/*Logo Image*/}
                 <img src={logo} alt="Logo"/>
 
+                {/* Desktop Navigation Menu */}
                 <ul className='md:flex gap-12 text-lg hidden'>
                     {
                         navItems.map(({path, link}) => (

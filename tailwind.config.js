@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        footerBlack: "#242933",  // Added the 'primaryBlack' color
+      }
     },
   },
   plugins: [],

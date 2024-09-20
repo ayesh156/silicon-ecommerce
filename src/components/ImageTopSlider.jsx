@@ -3,9 +3,9 @@ import 'swiper/css'; // Import Swiper core styles
 import 'swiper/css/effect-coverflow'; // Import coverflow effect styles
 import 'swiper/css/pagination'; // Import pagination styles
 import 'swiper/css/navigation'; // Import navigation styles
-import {aboutImg} from "../constants/index.jsx"; // Import image data
+import {homeTopImg} from "../constants/index.jsx"; // Import image data
 
-import {EffectCoverflow, Navigation, Pagination} from 'swiper/modules'; // Import Navigation module
+import {Autoplay, EffectCoverflow, Navigation, Pagination} from 'swiper/modules'; // Import Navigation module
 import { HiOutlineChevronLeft,HiOutlineChevronRight } from "react-icons/hi2";
 
 const ImageTopSlider = () => {
@@ -14,21 +14,29 @@ const ImageTopSlider = () => {
         <div className="relative text-white">
             <div className="swiper-custom">
                 <Swiper
-                    effect={'coverflow'}
-                    slidesPerView={1}
-                    grabCursor={true}
-                    loop={true}
+                    effect={'coverflow'} // Set the effect to coverflow
+                    slidesPerView={1} // Show one slide at a time
+                    grabCursor={true} // Enable cursor grab effect
+                    loop={true} // Enable infinite loop mode
                     navigation={{
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                        clickable: true
+                        nextEl: '.swiper-button-next', // Selector for next button
+                        prevEl: '.swiper-button-prev', // Selector for previous button
+                        clickable: true // Make buttons clickable
                     }}
-                    pagination={{ clickable: true }} // Enable pagination
-                    modules={[EffectCoverflow, Navigation, Pagination]}
-                    style={{ '--swiper-effect-coverflow-rotate': '50deg', '--swiper-effect-coverflow-depth': '300px', '--swiper-effect-coverflow-modifier': '1' }}
+                    pagination={{ clickable: true }} // Enable pagination dots
+                    autoplay={{
+                        delay: 2000, // Delay between slides
+                        disableOnInteraction: false, // Autoplay won't stop after interaction
+                    }}
+                    modules={[Autoplay, Navigation, Pagination, EffectCoverflow]} // Load required modules
+                    style={{
+                        '--swiper-effect-coverflow-rotate': '50deg',
+                        '--swiper-effect-coverflow-depth': '300px',
+                        '--swiper-effect-coverflow-modifier': '1'
+                    }} // Custom styles for coverflow effect
                 >
                     {/* Render images in SwiperSlide */}
-                    {aboutImg.map((item, i) => (
+                    {homeTopImg.map((item, i) => (
                         <SwiperSlide key={i} className="flex justify-center h-[358px] w-[293px]">
                             <img className="h-full w-full object-cover" src={item.image} alt={item.name}/>
                             {/* Overlay Container */}
@@ -47,7 +55,7 @@ const ImageTopSlider = () => {
                     <div className="slider-controler"></div>
 
                 </Swiper>
-                {/* Pagination */}
+                {/* Pagination dots */}
                 <div className="swiper-pagination"></div>
                 {/* Navigation buttons */}
                 <button className="swiper-btn"><HiOutlineChevronLeft className="swiper-button-prev"/></button>
