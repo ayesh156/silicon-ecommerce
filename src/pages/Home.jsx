@@ -15,7 +15,7 @@ const Home = () => {
                 <HomeProducts key={index} category={product.category} items={product.items} /> /* Render HomeProducts for each product category */
             ))}
             <div
-                className="w-full mt-36 mb-2">
+                className="w-full mt-10 md:mt-36 mb-2">
                 <ImageBottomSlider/> {/* Render the bottom image slider */}
             </div>
         </>

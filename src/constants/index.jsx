@@ -72,22 +72,22 @@ export const socialMediaLinks = [
   {
     name: "Facebook",
     link: "https://facebook.com",
-    icon: <LiaFacebookF className="h-4 w-4" />,
+    icon: <LiaFacebookF className="text-xl md:text-sm" />,
   },
   {
     name: "YouTube",
     link: "https://youtube.com",
-    icon: <FaYoutube className="h-3 w-3" />,
+    icon: <FaYoutube className="text-xl md:text-sm" />,
   },
   {
     name: "Instagram",
     link: "https://instagram.com",
-    icon: <FaInstagram className="h-3 w-3" />,
+    icon: <FaInstagram className="text-xl md:text-sm" />,
   },
   {
     name: "Twitter",
     link: "https://x.com",
-    icon: <TiSocialTwitter className="h-3 w-3" />,
+    icon: <TiSocialTwitter className="text-xl md:text-sm" />,
   },
 ];
 

@@ -9,7 +9,6 @@ import {EffectCoverflow, Navigation, Pagination, Autoplay} from 'swiper/modules'
 const ImageBottomSlider = () => {
 
     return (
-        <div className="relative text-white">
             <div className="swiper-custom2">
                 <Swiper
                     effect={'coverflow'} // Set the effect to coverflow
@@ -28,11 +27,19 @@ const ImageBottomSlider = () => {
                     }}
                     pagination={{ clickable: true }} // Enable pagination dots
                     modules={[Autoplay, EffectCoverflow, Navigation, Pagination]} // Load required modules
+                    breakpoints={{
+                        768: {
+                            slidesPerView: 1.2, // Show 1 slide when viewport is below 768px
+                        },
+                        0: {
+                            slidesPerView: 1, // Show 1 slide when viewport is below 768px
+                        },
+                    }}
                 >
                     {/* Render images in SwiperSlide */}
                     {homeBottomImgSlider.map((item, i) => (
                         <SwiperSlide key={i} className="flex justify-center h-[358px] w-[293px]">
-                            <img className="h-full w-full object-cover" src={item.image} alt={item.name}/>
+                            <img className="h-[360px] md:h-full w-full object-cover" src={item.image} alt={item.name}/>
                         </SwiperSlide>
                     ))}
                     <div className="slider-controler"></div>
@@ -41,7 +48,6 @@ const ImageBottomSlider = () => {
                 {/* Pagination container */}
                 <div className="swiper-pagination"></div>
             </div>
-        </div>
     );
 
 }

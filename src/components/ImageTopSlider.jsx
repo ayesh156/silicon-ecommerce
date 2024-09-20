@@ -37,15 +37,15 @@ const ImageTopSlider = () => {
                 >
                     {/* Render images in SwiperSlide */}
                     {homeTopImg.map((item, i) => (
-                        <SwiperSlide key={i} className="flex justify-center h-[358px] w-[293px]">
-                            <img className="h-full w-full object-cover" src={item.image} alt={item.name}/>
+                        <SwiperSlide key={i} className="flex justify-center md:h-[358px] h-[610px] w-[293px]">
+                            <img className="md:h-full h-[395px] w-full md:object-cover" src={item.image} alt={item.name}/>
                             {/* Overlay Container */}
-                            <div className={`absolute inset-0 flex flex-col justify-center text-left ${item.direction === 'right' ? 'items-end pr-24' : 'items-start pl-24'} ${item.color === 'white' ? 'text-white' : 'text-black'} p-4`}>
-                                <div className={`flex flex-col justify-center`}>
-                                <h2 className="text-5xl mb-2 font-semibold">{item.title}</h2>
+                            <div className={`md:absolute md:bg-transparent inset-0 flex flex-col justify-end md:justify-center text-left ${item.direction === 'right' ? 'md:items-end md:pr-24' : 'md:items-start md:pl-24'} ${item.color === 'white' ? 'text-white bg-black' : 'text-black bg-white'} p-2 md:p-4`}>
+                                <div className={`flex flex-col justify-start items-start md:justify-center`}>
+                                <h2 className="text-3xl md:text-5xl mb-2 font-semibold">{item.title}</h2>
                                 <h4 className="text-[16px] mb-4">{item.subtitle}</h4>
                                 <span className="text-[16px] mb-4">{item.description}</span>
-                                <button className="mt-4 bg-[#fe5200] text-white w-32 py-1 px-4 text-xl rounded-sm hover:underline">
+                                <button className="mt-4 md:bg-[#fe5200] md:text-white md:w-32 py-1 underline md:no-underline md:px-4 text-lg md:text-xl rounded-sm hover:underline">
                                     <a href={item.link}>Buy Now</a>
                                 </button>
                                 </div>
