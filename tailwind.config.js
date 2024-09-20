@@ -8,6 +8,9 @@ export default {
     extend: {
       colors: {
         footerBlack: "#242933",  // Added the 'primaryBlack' color
+        pageWhite: "#F5F5F5",
+        textBlue: "#58B1FF",
+        textGray: "#808080"
       }
     },
   },
