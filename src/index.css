@@ -10,7 +10,7 @@ body{
 }
 
 
-/* ----------- Home Image Slider ----------- */
+/* ----------- Home Top Image Slider ----------- */
 
 .swiper-custom{
     position: relative;
@@ -79,7 +79,9 @@ body{
 }
 
 
-/* ----------- Home Image Slider End ----------- */
+/* ----------- Home Image Top Slider End ----------- */
+
+/* ----------- Home Image Bottom Slider Start ----------- */
 
 .swiper-custom2{
     position: relative;
@@ -98,4 +100,50 @@ body{
 .swiper-custom2 .swiper-custom:hover .swiper-custom2 .swiper-button-next {
     opacity: 1; /* Show buttons on hover */
     visibility: visible; /* Show buttons on hover */
+}
+
+/* ----------- Home Image Bottom Slider End ----------- */
+
+/* ----------- About Slider Animation Start ----------- */
+
+@keyframes moveInFromLeft {
+    0% {
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveInFromRight {
+    0% {
+        transform: translateX(5%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.fade-in-left {
+    animation: moveInFromLeft 1s forwards; /* Adjust duration as needed */
+}
+
+.fade-in-right {
+    animation: moveInFromRight 1s forwards; /* Adjust duration as needed */
+}
+
+/* ----------- About Slider Animation End ----------- */
+.swiper-custom3{
+    position: relative;
+}
+
+.swiper-custom3 .swiper-button-prev,
+.swiper-custom3 .swiper-button-next {
+    color: rgba(0, 0, 0, 0.4) !important;
+    height: 50px !important;
+    width: 50px !important; /* Increased width for the arrow */
 }

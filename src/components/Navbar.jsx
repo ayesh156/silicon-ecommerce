@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom";
 import {FaBars, FaXmark} from "react-icons/fa6"
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.jpg';
 import {useState} from "react";
 import {navItems} from "../constants/index.jsx"; // Import image data
 
@@ -15,7 +15,7 @@ const Navbar = () => {
         <header className="fixed top-0 left-0 right-0 border-b-2 md:border-b-0 bg-white z-50">
             <nav className='md:px-5 py-3 px-3 mx-auto flex justify-between max-w-screen-2xl items-center'>
                 {/*Logo Image*/}
-                <img src={logo} alt="Logo"/>
+                <img src={logo} alt="Logo" className="h-[60px]"/>
 
                 {/* Desktop Navigation Menu */}
                 <ul className='md:flex gap-12 text-lg hidden'>

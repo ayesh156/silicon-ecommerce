@@ -11,7 +11,7 @@ import { HiOutlineChevronLeft,HiOutlineChevronRight } from "react-icons/hi2";
 const ImageTopSlider = () => {
 
     return (
-        <div className="relative text-white">
+        <div className="relative text-white w-full">
             <div className="swiper-custom">
                 <Swiper
                     effect={'coverflow'} // Set the effect to coverflow

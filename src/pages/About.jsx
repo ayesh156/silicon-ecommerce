@@ -1,10 +1,81 @@
+import video from "../assets/about_us-video.mp4";
+import {servicesData} from "../constants/index.jsx"; // Import image data
+import companyImg from "../assets/about_img/about_company_img.jpg";
+import NewsSlider from "../components/NewsSlider.jsx";
+
 const About = () => {
 
     return (
-        <h1 className="text-3xl font-bold underline">
-            About
-        </h1>
+        <div className="bg-pageWhite">
+            <div className="relative w-full h-screen">
+                <video
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    src={video}
+                    autoPlay
+                    loop
+                    muted
+                />
+
+            </div>
+            <div className="flex flex-col justify-center items-center h-full py-28">
+                <h1 className="text-4xl font-medium mb-4 relative">
+                    About OSCAL
+                    <div
+                        className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 w-[60px] h-[0.5px] bg-black"></div>
+                </h1>
+                <p className="text-xl max-w-[65.6rem] leading-10 text-center mt-[6.9rem] text-textBlack">
+                    OSCAL is a technology brand that focuses on product performance, design, quality, and service.
+                    Driven by the innovation DNA, OSCAL is committed to letting everyone enjoy smart devices with
+                    leap-forward performance and trendsetting design at a very friendly price.
+                </p>
+                <p className="text-xl max-w-[65.6rem] leading-10 text-center mt-[5rem] text-textBlack">
+                    OSCAL has an excellent R&D team, led by a number of technical experts who have worked for decades in
+                    international first-line mobile phone companies, and consisting of nearly 100 R&D engineers. They
+                    strive to maintain the leading position in the industry, and pay more attention to customer
+                    experience and product quality. Design innovation, performance excellence, and attention to details
+                    are the basis of OSCAL products&apos; design and R&D. OSCAL has long cooperation with first-class
+                    suppliers, and the supply of production materials is extremely stable.
+                </p>
+                <p className="text-xl max-w-[65.6rem] leading-10 text-center mt-[5rem] text-textBlack">
+                    At the beginning of 2021, OSCAL was awarded as The Most Potential Hi-Tech Brand to promisingly reach
+                    the top technology brand worldwide. This year, OSCAL plans to launch several highly affordable smart
+                    devices, including mainstream smartphones, rugged outdoor phones, tablets, and earphones to open the
+                    global market. In the blueprint, OSCAL strives to cover over 100 markets worldwide, including
+                    Europe, Africa, Asia, Latin America, Oceania, etc.
+                </p>
+            </div>
+            <div className="flex flex-col justify-center items-center h-full pb-[5.6rem]">
+                <h1 className="text-4xl font-medium relative">
+                    Innovation, Quality and Service
+                    <div
+                        className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 w-[60px] h-[0.5px] bg-black"></div>
+                </h1>
+                <div className="mt-[4.8rem] grid grid-cols-3 w-full gap-4 max-w-5xl">
+                    {servicesData.map((employee, index) => (
+                        <div
+                            key={index}
+                            className="flex flex-col justify-center items-center mt-16"
+                        >
+                            <h4 className="text-4xl font-medium">{employee.count}</h4>
+                            <span className="text-md mt-[3.2rem]">{employee.label}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className="relative w-full h-[39.5rem]">
+                <img src={companyImg} alt="Company Image" className="absolute top-0 left-0 w-full h-full object-cover"/>
+
+            </div>
+            <div className="flex flex-col justify-center items-center h-full pt-[5.2rem] pb-[7.6rem]">
+                <h1 className="text-4xl font-medium relative">
+                    News Center
+                    <div
+                        className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 w-[60px] h-[0.5px] bg-black"></div>
+                </h1>
+                <NewsSlider />
+            </div>
+        </div>
     )
-}
+};
 
 export default About;

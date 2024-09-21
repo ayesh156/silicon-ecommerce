@@ -7,17 +7,11 @@ const Home = () => {
 
     return (
         <>
-            <div
-                className="w-full">
-                <ImageTopSlider/> {/* Render the top image slider */}
-            </div>
+            <ImageTopSlider/> {/* Render the top image slider */}
             {homeProducts.map((product, index) => (
-                <HomeProducts key={index} category={product.category} items={product.items} /> /* Render HomeProducts for each product category */
+                <HomeProducts key={index} category={product.category} items={product.items}/> /* Render HomeProducts for each product category */
             ))}
-            <div
-                className="w-full mt-10 md:mt-36 mb-2">
-                <ImageBottomSlider/> {/* Render the bottom image slider */}
-            </div>
+            <ImageBottomSlider/> {/* Render the bottom image slider */}
         </>
     )
 }

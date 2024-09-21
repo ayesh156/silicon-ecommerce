@@ -10,6 +10,7 @@ import Home from "./pages/Home.jsx";
 import News from "./pages/News.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
+import Construction from "./pages/Construction.jsx";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/contact-us", // Contact Us route
-                element: <Contact />, // Component to render for the contact us route
+                element: <Construction />, // Component to render for the contact us route
             }
         ]
     },

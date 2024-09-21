@@ -8,7 +8,7 @@ const HomeProducts = ({category, items}) => (
                     href="https://google.com"
                     className="md:text-xl text-lg font-normal hover:underline transform transition-transform duration-500 hover:-translate-x-3"
                 >
-                    More >>
+                    More  &gt;&gt;
                 </a>
             </div>
             {/* Conditional rendering based on item layout */}

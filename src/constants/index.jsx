@@ -49,9 +49,20 @@ import { TiSocialTwitter } from "react-icons/ti";
 export const navItems = [
   {path: "/", link: "Home"},
   {path: "/news", link: "News"},
-  {path: "/about-us", link: "About"},
-  {path: "/contact-us", link: "Contact"},
+  {path: "/about-us", link: "About Us"},
+  {path: "/contact-us", link: "Contact Us"},
 ];
+
+// servicesData
+export const servicesData = [
+  { count: "800+", label: "Employees" },
+  { count: "50%+", label: "R&D staff" },
+  { count: "100+", label: "Markets" },
+  { count: "120+", label: "Distributors" },
+  { count: "9000m²", label: "Factory area" },
+  { count: "3500m²", label: "Headquarters area" },
+];
+
 
 // Sample news data
 export const newsData = [

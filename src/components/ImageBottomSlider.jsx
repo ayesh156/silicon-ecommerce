@@ -9,6 +9,7 @@ import {EffectCoverflow, Navigation, Pagination, Autoplay} from 'swiper/modules'
 const ImageBottomSlider = () => {
 
     return (
+        <div className="w-full mt-10 md:mt-36 mb-2">
             <div className="swiper-custom2">
                 <Swiper
                     effect={'coverflow'} // Set the effect to coverflow
@@ -48,6 +49,7 @@ const ImageBottomSlider = () => {
                 {/* Pagination container */}
                 <div className="swiper-pagination"></div>
             </div>
+        </div>
     );
 
 }
