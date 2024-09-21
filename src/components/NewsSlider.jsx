@@ -6,6 +6,7 @@ import 'swiper/css/navigation'; // Import navigation styles
 import {EffectCoverflow, Navigation} from 'swiper/modules'; // Import Navigation module
 import { useState } from 'react';
 import {HiOutlineChevronLeft, HiOutlineChevronRight} from "react-icons/hi2";
+import {aboutNewsSlider} from "../constants/index.jsx";
 
 const NewsSlider = () => {
     const [selectedYear, setSelectedYear] = useState(2024); // Track the selected year
@@ -14,47 +15,8 @@ const NewsSlider = () => {
     const [slideDirection, setSlideDirection] = useState('fade-in-left'); // Initial direction
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0); // Track the current slide index
 
-    const slidesData = [
-        {
-            year: 2024,
-            slides: [
-                {
-                    title: "1/2024",
-                    description: "Launch OSCAL PowerMax 3600, the world's first rugged power station for both home and outdoor backup; Facebook followers exceed one million",
-                }
-            ]
-        },
-        {
-            year: 2023,
-            slides: [
-                {
-                    title: "10/2023",
-                    description: "Launch OSCAL PowerMax 3600, the world's first rugged power station for both home and outdoor backup; Facebook followers exceed one million",
-                },
-                {
-                    title: "11/2023",
-                    description: "TIGER 12 placed third in real-time industry-wide sales on AliExpress",
-                },
-                {
-                    title: "12/2023",
-                    description: "Throughout 2023, OSCAL and Blackview achieved a total product sales volume of 3,480,000 units and a sales revenue of $400 million",
-                },
-            ]
-        },
-        {
-            year: 2022,
-            slides: [
-                {
-                    title: "",
-                    description: " Self-developed and released the latest DokeOS 3.0; Unveiling the pioneering tablet PC mode",
-                },
-            ]
-        },
-        // Add more year objects here
-    ];
-
     // Filter slides based on the selected year
-    const currentYearSlides = slidesData.find((data) => data.year === selectedYear)?.slides || [];
+    const currentYearSlides = aboutNewsSlider.find((data) => data.year === selectedYear)?.slides || [];
 
     // Update opacity when the slide changes
     const handleSlideChange = (swiper) => {
@@ -74,7 +36,7 @@ const NewsSlider = () => {
         <div className="max-w-[76rem] mt-10 md:mt-36 mb-2">
             {/* Year selection buttons */}
             <div className="relative flex justify-between mb-6 text-center px-8 md:px-64">
-                {slidesData.map((data) => (
+                {aboutNewsSlider.map((data) => (
                     <div className="inline-block relative group" key={data.year}>
                         <button
                             onClick={() => setSelectedYear(data.year)}

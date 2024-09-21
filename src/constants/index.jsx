@@ -63,6 +63,45 @@ export const servicesData = [
   { count: "3500m²", label: "Headquarters area" },
 ];
 
+export const aboutNewsSlider = [
+  {
+    year: 2024,
+    slides: [
+      {
+        title: "1/2024",
+        description: "Launch OSCAL PowerMax 3600, the world's first rugged power station for both home and outdoor backup; Facebook followers exceed one million",
+      }
+    ]
+  },
+  {
+    year: 2023,
+    slides: [
+      {
+        title: "10/2023",
+        description: "Launch OSCAL PowerMax 3600, the world's first rugged power station for both home and outdoor backup; Facebook followers exceed one million",
+      },
+      {
+        title: "11/2023",
+        description: "TIGER 12 placed third in real-time industry-wide sales on AliExpress",
+      },
+      {
+        title: "12/2023",
+        description: "Throughout 2023, OSCAL and Blackview achieved a total product sales volume of 3,480,000 units and a sales revenue of $400 million",
+      },
+    ]
+  },
+  {
+    year: 2022,
+    slides: [
+      {
+        title: "",
+        description: " Self-developed and released the latest DokeOS 3.0; Unveiling the pioneering tablet PC mode",
+      },
+    ]
+  },
+  // Add more year objects here
+];
+
 
 // Sample news data
 export const newsData = [

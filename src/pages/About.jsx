@@ -7,7 +7,7 @@ const About = () => {
 
     return (
         <div className="bg-pageWhite">
-            <div className="relative w-full h-screen">
+            <div className="relative w-full h-64 sm:h-96 md:h-screen">
                 <video
                     className="absolute top-0 left-0 w-full h-full object-cover"
                     src={video}
