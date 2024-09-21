@@ -13,6 +13,7 @@ export default {
         textGray: "#808080",
         textBlack: "#4A4E51",
         lineGray: "#D0D0D0",
+        btnBlue: "#133285"
       }
     },
   },

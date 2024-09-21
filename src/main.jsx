@@ -11,6 +11,7 @@ import News from "./pages/News.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Construction from "./pages/Construction.jsx";
+import PageNotFound from "./pages/PageNotFound.jsx";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: "/contact-us", // Contact Us route
                 element: <Construction />, // Component to render for the contact us route
+            },
+            {
+                path: "*", // Catch-all route for unmatched paths
+                element: <PageNotFound />, // Component to render for unmatched paths
             }
         ]
     },
