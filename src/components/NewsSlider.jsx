@@ -5,10 +5,11 @@ import 'swiper/css/pagination'; // Import pagination styles
 import 'swiper/css/navigation'; // Import navigation styles
 import {EffectCoverflow, Navigation} from 'swiper/modules'; // Import Navigation module
 import { useState } from 'react';
-import {HiOutlineChevronLeft, HiOutlineChevronRight} from "react-icons/hi2";
-import {aboutNewsSlider} from "../constants/index.jsx";
+import {HiOutlineChevronLeft, HiOutlineChevronRight} from "react-icons/hi2"; // Icons for navigation buttons
+import {aboutNewsSlider} from "../constants/index.jsx"; // Importing slider data
 
 const NewsSlider = () => {
+    // useState hooks for tracking selected year, opacity, animation class, slide direction, and current slide index
     const [selectedYear, setSelectedYear] = useState(2024); // Track the selected year
     const [opacity, setOpacity] = useState(0);
     const [animationClass, setAnimationClass] = useState('');
@@ -18,79 +19,89 @@ const NewsSlider = () => {
     // Filter slides based on the selected year
     const currentYearSlides = aboutNewsSlider.find((data) => data.year === selectedYear)?.slides || [];
 
-    // Update opacity when the slide changes
+    // Handle slide change event to trigger animation and manage opacity
     const handleSlideChange = (swiper) => {
-        setCurrentSlideIndex(swiper.activeIndex); // Update current slide index
-        setOpacity(0); // Reset opacity to 0 for the new slide
-        setAnimationClass(''); // Reset animation class
+        setCurrentSlideIndex(swiper.activeIndex); // Update active slide index
+        setOpacity(0); // Reset opacity to create a fade effect
+        setAnimationClass(''); // Clear previous animation class
         setTimeout(() => {
-            setOpacity(1); // Set opacity to 1 after a brief delay
-            // Alternate direction between left and right
+            setOpacity(1); // Set opacity back after a brief delay for fade-in effect
+            // Toggle between left and right animation directions
             const newDirection = slideDirection === 'fade-in-left' ? 'fade-in-right' : 'fade-in-left';
-            setAnimationClass(newDirection); // Set the new direction class
-            setSlideDirection(newDirection); // Update the current direction
-        }, 300); // Delay for opacity transition
+            setAnimationClass(newDirection); // Apply new animation direction
+            setSlideDirection(newDirection); // Update the current slide direction state
+        }, 300); // Timeout for smooth transition
     };
 
     return (
-        <div className="max-w-[76rem] mt-20 md:mt-36 mb-2">
-            {/* Year selection buttons */}
-            <div className="relative flex justify-between mb-6 text-center px-8 md:px-64">
+        <div className="max-w-full md:max-w-[76rem] mt-20 md:mt-32 md:mb-2">
+            {/* Year selection buttons for filtering news by year */}
+            <div className="relative mx-10 md:mx-0 flex justify-between md:mb-6 text-center px-4 md:px-64">
                 {aboutNewsSlider.map((data) => (
                     <div className="inline-block relative group" key={data.year}>
                         <button
                             onClick={() => setSelectedYear(data.year)}
-                            className={`text-2xl rounded ${selectedYear === data.year ? 'text-black font-sans font-bold' : 'text-textGray font-normal'}`}
+                            className={`text-lg md:text-2xl rounded ${selectedYear === data.year ? 'text-black font-bold' : 'text-textGray font-normal'}`}
                         >
                             {data.year}
                         </button>
-                        <span className={`absolute left-0 bottom-[-23px] w-full h-[3px]  ${selectedYear === data.year ? 'bg-black' : 'bg-transparent'}`}></span>
+                        <span
+                            className={`absolute left-0 bottom-[-8px] md:bottom-[-18px] w-full h-[2px] ${selectedYear === data.year ? 'bg-black' : 'bg-transparent'} z-10`}></span>
                     </div>
                 ))}
-                <span className="absolute left-0 bottom-[-23px] bg-lineGray md:w-full h-[1px]"></span>
+                <span className="absolute left-0 bottom-[-8px] md:bottom-[-18px] bg-lineGray w-full h-[1px] z-0"></span>
             </div>
 
+            {/* Swiper component for news slides */}
             <div className="swiper-custom3">
                 <Swiper
-                    effect={'coverflow'} // Set the effect to coverflow
-                    slidesPerView={1} // Show part of the adjacent slides
-                    grabCursor={true} // Enable cursor grab effect
-                    loop={true} // Enable infinite loop mode
+                    effect={'coverflow'} // Applying coverflow effect for Swiper
+                    slidesPerView={1} // Display one slide at a time
+                    grabCursor={true} // Enable grab cursor for slide navigation
+                    loop={true} // Loop through slides indefinitely
                     navigation={{
-                        nextEl: '.swiper-button-next', // Selector for next button
-                        prevEl: '.swiper-button-prev', // Selector for previous button
-                        clickable: true // Make buttons clickable
+                        nextEl: '.swiper-button-next', // Next slide button
+                        prevEl: '.swiper-button-prev', // Previous slide button
+                        clickable: true
                     }}
-                    modules={[EffectCoverflow, Navigation]} // Load required modules
-                    onSlideChange={handleSlideChange} // Handle slide change
+                    modules={[EffectCoverflow, Navigation]} // Enable coverflow and navigation modules
+                    onSlideChange={handleSlideChange} // Event handler for slide change
                 >
-                    {/* Render filtered images in SwiperSlide */}
+                    {/* Dynamically render slides based on filtered data */}
                     {currentYearSlides.map((item, i) => (
                         <SwiperSlide key={i}>
-                            <div className="bg-white h-full mt-7 pt-[9.5rem] pb-[3rem] md:px-16 border-2 flex flex-col justify-center items-center text-center text-textGray fade-in">
-                                <h3 className={`text-2xl md:text-4xl md:h-[50px] font-normal md:font-medium ${animationClass}`}  style={{ opacity }}>
+                            <div
+                                className="bg-white h-auto mt-5 pt-[6rem] sm:pt-[9.5rem] pb-[2rem] md:pb-[3rem] px-4 sm:px-8 md:px-16 border-2 flex flex-col justify-center items-center text-center text-textGray fade-in">
+                                {/* Slide title with animation and opacity transitions */}
+                                <h3 className={`text-xl sm:text-2xl md:text-4xl h-[50px] font-normal md:font-medium ${animationClass}`}
+                                    style={{opacity}}>
                                     {item.title}
                                 </h3>
-                                <p className={`mt-11 text-[16px]  md:text-lg transition-opacity duration-500 ease-in-out ${animationClass} md:h-[40px]`}  style={{ opacity }}>
+                                {/* Slide description with opacity transition */}
+                                <p className={`mt-6 sm:mt-8 md:mt-11 text-[12px] sm:text-[16px] md:text-lg transition-opacity duration-500 ease-in-out ${animationClass} h-[40px]`}
+                                   style={{opacity}}>
                                     {item.description}
                                 </p>
-                                <div className="pt-[5.4rem]">
-                                    <span className="text-2xl text-black">{i + 1} / </span>
-                                    <span className="text-2xl">{currentYearSlides.length}</span>
+                                {/* Display current slide number and total slide count */}
+                                <div className="pt-8 sm:pt-10 md:pt-[5.4rem]">
+                                    <span className="text-lg sm:text-2xl text-black">{i + 1} / </span>
+                                    <span className="text-lg sm:text-2xl">{currentYearSlides.length}</span>
                                 </div>
                             </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
+
                 {/* Navigation buttons */}
-                <button className="swiper-btn">
+                <button className="swiper-btn" hidden={currentSlideIndex === 0}>
                     <HiOutlineChevronLeft className="swiper-button-prev" />
                 </button>
-                <button className="swiper-btn">
+                <button className="swiper-btn" hidden={currentSlideIndex === aboutNewsSlider.length - 1}>
                     <HiOutlineChevronRight className="swiper-button-next" />
                 </button>
             </div>
         </div>
+
     );
 }
 

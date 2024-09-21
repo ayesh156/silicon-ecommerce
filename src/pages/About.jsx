@@ -7,22 +7,26 @@ const About = () => {
 
     return (
         <div className="bg-pageWhite">
-            <div className="relative w-full h-64 sm:h-96 md:h-screen">
+            {/* Section with background video */}
+            <div className="md:relative">
                 <video
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className="w-full h-auto min-h-64 md:h-screen object-cover"
                     src={video}
                     autoPlay
                     loop
                     muted
                 />
-
             </div>
-            <div className="flex flex-col justify-center items-center h-full py-11 px-2 md:px-0 md:py-28">
+
+            {/* About OSCAL Section */}
+            <div className="flex flex-col justify-center items-center h-full pt-11 pb-[3.8rem] px-2 md:px-0 md:py-28">
                 <h1 className="text-xl md:text-4xl font-medium mb-4 relative">
                     About OSCAL
+                    {/* Decorative underline */}
                     <div
                         className="absolute md:bottom-[-30px] bottom-[-8px] left-1/2 transform -translate-x-1/2 w-[60px] h-[0.5px] bg-black"></div>
                 </h1>
+                {/* Company description paragraphs */}
                 <p className="text-[12px] md:text-xl max-w-[65.6rem] leading-5 md:leading-10 text-center mt-[2.7rem] md:mt-[6.9rem] text-textBlack">
                     OSCAL is a technology brand that focuses on product performance, design, quality, and service.
                     Driven by the innovation DNA, OSCAL is committed to letting everyone enjoy smart devices with
@@ -44,13 +48,17 @@ const About = () => {
                     Europe, Africa, Asia, Latin America, Oceania, etc.
                 </p>
             </div>
+
+            {/* Innovation, Quality, and Service Section */}
             <div className="flex flex-col justify-center items-center h-full pb-[3rem] md:pb-[5.6rem]">
                 <h1 className="text-xl md:text-4xl font-medium relative">
                     Innovation, Quality and Service
                     <div
                         className="absolute md:bottom-[-30px] bottom-[-8px] left-1/2 transform -translate-x-1/2 w-[60px] h-[0.5px] bg-black"></div>
                 </h1>
-                <div className="mt-[2rem] md:mt-[4.8rem] grid grid-cols-2 md:grid-cols-3 w-full gap-4 max-w-5xl">
+
+                {/* Service Data Grid */}
+                <div className="mt-[1.2rem] md:mt-[4.8rem] grid grid-cols-2 md:grid-cols-3 w-full gap-4 max-w-5xl">
                     {servicesData.map((employee, index) => (
                         <div
                             key={index}
@@ -62,17 +70,20 @@ const About = () => {
                     ))}
                 </div>
             </div>
-            <div className="relative w-full h-[9rem] md:h-[39.5rem]">
-                <img src={companyImg} alt="Company Image" className="absolute top-0 left-0 w-full h-full object-cover"/>
 
-            </div>
-            <div className="flex flex-col justify-center items-center h-full pt-[4.4rem] md:pt-[5.2rem] pb-[7.6rem]">
+            {/* Company Image */}
+            <img src={companyImg} alt="Company Image" className="w-full h-full"/>
+
+            {/* News Center Section */}
+            <div className="flex flex-col justify-center items-center h-full pt-[4.4rem] md:pt-[5.2rem] md:pb-[7.6rem]">
                 <h1 className="text-xl md:text-4xl font-medium relative">
                     News Center
+                    {/* Decorative underline */}
                     <div
                         className="absolute  md:bottom-[-30px] bottom-[-8px] left-1/2 transform -translate-x-1/2 w-[60px] h-[0.5px] bg-black"></div>
                 </h1>
-                <NewsSlider />
+                {/* News Slider Component */}
+                <NewsSlider/>
             </div>
         </div>
     )
