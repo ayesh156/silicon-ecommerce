@@ -33,7 +33,7 @@ const NewsSlider = () => {
     };
 
     return (
-        <div className="max-w-[76rem] mt-10 md:mt-36 mb-2">
+        <div className="max-w-[76rem] mt-20 md:mt-36 mb-2">
             {/* Year selection buttons */}
             <div className="relative flex justify-between mb-6 text-center px-8 md:px-64">
                 {aboutNewsSlider.map((data) => (
@@ -47,7 +47,7 @@ const NewsSlider = () => {
                         <span className={`absolute left-0 bottom-[-23px] w-full h-[3px]  ${selectedYear === data.year ? 'bg-black' : 'bg-transparent'}`}></span>
                     </div>
                 ))}
-                <span className="absolute left-0 bottom-[-23px] bg-lineGray w-full h-[1px]"></span>
+                <span className="absolute left-0 bottom-[-23px] bg-lineGray md:w-full h-[1px]"></span>
             </div>
 
             <div className="swiper-custom3">
@@ -67,11 +67,11 @@ const NewsSlider = () => {
                     {/* Render filtered images in SwiperSlide */}
                     {currentYearSlides.map((item, i) => (
                         <SwiperSlide key={i}>
-                            <div className="bg-white h-full mt-7 pt-[9.5rem] pb-[3rem] px-16 border-2 flex flex-col justify-center items-center text-center text-textGray fade-in">
-                                <h3 className={`text-4xl font-medium ${animationClass}`}  style={{ opacity, height: '50px' }}>
+                            <div className="bg-white h-full mt-7 pt-[9.5rem] pb-[3rem] md:px-16 border-2 flex flex-col justify-center items-center text-center text-textGray fade-in">
+                                <h3 className={`text-2xl md:text-4xl md:h-[50px] font-normal md:font-medium ${animationClass}`}  style={{ opacity }}>
                                     {item.title}
                                 </h3>
-                                <p className={`mt-11 text-lg transition-opacity duration-500 ease-in-out ${animationClass}`}  style={{ opacity, height: '40px' }}>
+                                <p className={`mt-11 text-[16px]  md:text-lg transition-opacity duration-500 ease-in-out ${animationClass} md:h-[40px]`}  style={{ opacity }}>
                                     {item.description}
                                 </p>
                                 <div className="pt-[5.4rem]">
