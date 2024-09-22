@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import NewsComponent from "../components/NewsComponent.jsx";
-import {newsData} from "../constants/index.jsx"; // Import image data
+import {newsData} from "../constants/index.jsx"; // Import data
 
 const News = () => {
 

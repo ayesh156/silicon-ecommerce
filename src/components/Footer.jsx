@@ -1,6 +1,6 @@
 import { AiOutlineGlobal } from "react-icons/ai";
 import {footerItems, socialMediaLinks, footerLinks} from "../constants/index.jsx";
-import {useEffect, useState} from "react"; // Import image data
+import {useEffect, useState} from "react"; // Import data
 import { FaPlus, FaMinus } from "react-icons/fa";
 
 const Footer = () => {

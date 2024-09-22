@@ -3,7 +3,7 @@ import 'swiper/css'; // Import Swiper core styles
 import 'swiper/css/effect-coverflow'; // Import coverflow effect styles
 import 'swiper/css/pagination'; // Import pagination styles
 import 'swiper/css/navigation'; // Import navigation styles
-import {homeBottomImgSlider} from "../constants/index.jsx"; // Import image data
+import {homeBottomImgSlider} from "../constants/index.jsx"; // Import data
 import {EffectCoverflow, Navigation, Pagination, Autoplay} from 'swiper/modules'; // Import Navigation module
 
 const ImageBottomSlider = () => {

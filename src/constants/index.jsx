@@ -63,6 +63,25 @@ export const servicesData = [
   { count: "3500m²", label: "Headquarters area" },
 ];
 
+// contactUsCategories
+export const contactUsCategories = [
+  "Purchase & Payments",
+  "Order & Shipping",
+  "After Sales",
+  "Complaints & Feedback",
+  "Blackview Account",
+];
+
+// contactUsPhoneNumbers
+export const contactUsPhoneNumbers = [
+  "+9477 716 5555",
+];
+
+// contactUsPhoneEmails
+export const contactUsPhoneEmails = [
+  { label: "Contact", email: "sales@starmobile.lk" },
+];
+
 export const aboutNewsSlider = [
   {
     year: 2024,

@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/contact-us", // Contact Us route
-                element: <Construction />, // Component to render for the contact us route
+                element: <Contact/>, // Component to render for the contact us route
             },
             {
                 path: "*", // Catch-all route for unmatched paths

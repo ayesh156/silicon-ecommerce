@@ -2,7 +2,7 @@ import {NavLink} from "react-router-dom";
 import {FaBars, FaXmark} from "react-icons/fa6"
 import logo from '../assets/logo.jpg';
 import {useState} from "react";
-import {navItems} from "../constants/index.jsx"; // Import image data
+import {navItems} from "../constants/index.jsx"; // Import data
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);// State to manage mobile menu visibility
@@ -22,7 +22,7 @@ const Navbar = () => {
                     {
                         navItems.map(({path, link}) => (
                             <li key={path} className="relative group">
-                                <NavLink to={path}>
+                                <NavLink to={link}>
                                     {link}
                                 </NavLink>
                                 {/* Line on hover */}
@@ -59,7 +59,7 @@ const Navbar = () => {
                 <ul className={`md:hidden gap-12 text-lg block space-y-3 bg-white ${isMenuOpen ? 'h-screen w-full transition-all ease-out duration-150' : 'hidden'}`}>
                     {
                         navItems.map(({path, link}) => (
-                            <li key={navItems.path} className="border-b-2 md:border-b-0 pb-3 px-4">
+                            <li key={path} className="border-b-2 md:border-b-0 pb-3 px-4">
                                 <NavLink onClick={toggleMenu} to={path}>{link}</NavLink>
                             </li>
                         ))
