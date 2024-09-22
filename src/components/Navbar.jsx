@@ -22,7 +22,7 @@ const Navbar = () => {
                     {
                         navItems.map(({path, link}) => (
                             <li key={path} className="relative group">
-                                <NavLink to={link}>
+                                <NavLink to={path}>
                                     {link}
                                 </NavLink>
                                 {/* Line on hover */}
