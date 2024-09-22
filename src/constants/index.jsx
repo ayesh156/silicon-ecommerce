@@ -49,8 +49,8 @@ import { TiSocialTwitter } from "react-icons/ti";
 export const navItems = [
   {path: "/", link: "Home"},
   {path: "/news", link: "News"},
-  {path: "/about-us", link: "About Us"},
-  {path: "/contact-us", link: "Contact Us"},
+  {path: "/about-us", link: "About-us"},
+  {path: "/contact-us", link: "Contact-us"},
 ];
 
 // servicesData
