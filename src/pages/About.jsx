@@ -1,6 +1,6 @@
-import video from "../assets/about_us-video.mp4";
+import video from "../assets/about/about_us-video.mp4";
 import {servicesData} from "../constants/index.jsx"; // Import image data
-import companyImg from "../assets/about_img/about_company_img.jpg";
+import companyImg from "../assets/about/about_company_img.jpg";
 import NewsSlider from "../components/NewsSlider.jsx";
 
 const About = () => {
